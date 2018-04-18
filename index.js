@@ -19,7 +19,7 @@ module.exports = function scrollbox (opts) {
     get content () { return content },
     set content (_content) { setContent(_content) },
     get width () { return width },
-    get height () { return height },
+    get height () { return height }
   }
 
   var offset = 0
