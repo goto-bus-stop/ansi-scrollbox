@@ -1,6 +1,6 @@
 var test = require('tape')
 
-test('Example Test', function (t) {
+test('scrollbox', function (t) {
   t.plan(1)
-  t.error('No tests defined.')
+  t.pass('No tests defined.')
 })
