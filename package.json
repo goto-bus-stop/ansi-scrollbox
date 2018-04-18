@@ -1,0 +1,39 @@
+{
+  "name": "ansi-scrollbox",
+  "description": "a basic scrollable area for terminal apps",
+  "version": "0.0.0",
+  "author": "Renée Kooi <renee@kooi.me>",
+  "bugs": {
+    "url": "https://github.com/goto-bus-stop/ansi-scrollbox/issues"
+  },
+  "devDependencies": {
+    "@jamen/lorem": "^0.1.0",
+    "ansi-diff": "^1.1.0",
+    "keypress": "^0.2.1",
+    "standard": "^11.0.0",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0"
+  },
+  "homepage": "https://github.com/goto-bus-stop/ansi-scrollbox",
+  "keywords": [
+    "ansi",
+    "cli",
+    "command-line",
+    "scroll",
+    "scrollable",
+    "scrollbox",
+    "terminal"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto-bus-stop/ansi-scrollbox.git"
+  },
+  "scripts": {
+    "test": "standard && node test/index.js | tap-spec"
+  },
+  "dependencies": {
+    "wrap-ansi": "^3.0.1"
+  }
+}
