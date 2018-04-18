@@ -14,6 +14,8 @@ module.exports = function scrollbox (opts) {
     setContent: setContent,
     resize: resize,
     scroll: scroll,
+    scrollUp: scrollUp,
+    scrollDown: scrollDown,
     keypress: keypress,
     toString: toString,
     get content () { return content },
@@ -46,6 +48,12 @@ module.exports = function scrollbox (opts) {
 
     offset = _offset
   }
+  function scrollUp (d) {
+    scroll(offset < 0 ? offset - d : Math.max(offset - d, 0))
+  }
+  function scrollDown (d) {
+    scroll(offset >= 0 ? offset + d : Math.min(offset + d, -1))
+  }
 
   // TODO optimize
   function updateLinesCache () {
@@ -53,9 +61,19 @@ module.exports = function scrollbox (opts) {
     linesDirty = false
   }
 
+  function resolveOffset () {
+    if (offset === -1) return
+    if (offset >= lines.length - height) {
+      offset = Math.max(0, lines.length - height)
+    } else if (offset < -1) {
+      offset = Math.max(0, lines.length + offset + 1 - height)
+    }
+  }
+
   function toString () {
     if (linesDirty) updateLinesCache()
-    var o = offset < 0 ? lines.length - height + offset : Math.min(lines.length - height, offset)
+    resolveOffset()
+    var o = offset === -1 ? lines.length - height : Math.min(lines.length - height, offset)
     var visible = lines.slice(o, o + height)
     while (visible.length < height) visible.push('')
     return visible.join('\n')
@@ -64,10 +82,10 @@ module.exports = function scrollbox (opts) {
   function keypress (ch, key) {
     if (!key) return
     if (key.name === 'down' || key.name === 'j') {
-      offset = offset >= 0 ? offset + 1 : Math.min(offset + 1, -1)
+      scrollDown(1)
     }
     if (key.name === 'up' || key.name === 'k') {
-      offset = offset < 0 ? offset - 1 : Math.max(offset - 1, 0)
+      scrollUp(1)
     }
     if (key.name === 'home') offset = 0
     if (key.name === 'end') offset = -1
