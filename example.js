@@ -35,7 +35,7 @@ function nextSize () {
 var scroll = 0
 
 write()
-setInterval(write, 100)
+box.subscribe(write)
 
 // make `process.stdin` begin emitting "keypress" events
 require('keypress')(process.stdin)
