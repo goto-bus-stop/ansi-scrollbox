@@ -47,7 +47,39 @@ process.stdin.on('keypress', box.keypress)
 
 ## API
 
-TODO
+### `box = scrollbox(opts={})`
+
+Prepare a new scrollbox.
+
+- `opts.width` - Width in columns of the scrollbox.
+- `opts.height` - Height in rows of the scrollbox.
+
+### `box.setContent(content)`, `box.content = content`
+
+Set the content of the scrollbox.
+
+### `box.content`
+
+Get the content of the scrollbox.
+
+### `box.scroll(offset)`
+
+Set the scroll position. `offset` is the number of rows from the start of the content. When `offset` is negative, it's the number of rows from the end of the content. Use -1 to scroll to the very end; -1 is "sticky" so it will stay at the end when the content updates.
+
+### `box.resize(opts)`
+
+Update the size of the scrollbox.
+
+- `opts.width` - Width in columns of the scrollbox.
+- `opts.height` - Height in rows of the scrollbox.
+
+### `box.toString()`
+
+Get the visible contents of the box. Use with something like [ansi-diff](https://github.com/mafintosh/ansi-diff) for efficient updates on screene.
+
+### `unsub = box.subscribe(listener)`
+
+Call `listener` whenever the box's content, size, or scroll position change. Do `unsub()` to stop listening.
 
 ## License
 
