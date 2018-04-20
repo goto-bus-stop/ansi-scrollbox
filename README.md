@@ -81,6 +81,22 @@ Get the visible contents of the box. Use with something like [ansi-diff](https:/
 
 Call `listener` whenever the box's content, size, or scroll position change. Do `unsub()` to stop listening.
 
+### `box.keypress`
+
+An event listener that implements basic keyboard controls:
+
+- `up` or `k` to scroll 1 row up
+- `down` or `j` to scroll 1 row down
+- `home` to scroll to the start
+- `end` to scroll to the start
+
+Use it with the [keypress](https://github.com/TooTallNate/keypress) module:
+
+```js
+require('keypress')(process.stdin)
+process.stdin.on('keypress', box.keypress)
+```
+
 ## License
 
 [Apache-2.0](LICENSE.md)
