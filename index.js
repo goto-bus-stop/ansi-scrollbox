@@ -3,7 +3,7 @@ var wrapAnsi = require('wrap-ansi')
 
 module.exports = function scrollbox (opts) {
   opts = opts || {}
-  assert.equal(typeof opts, 'object', 'opts must be object')
+  assert.strictEqual(typeof opts, 'object', 'opts must be object')
 
   // user facing state
   var content = opts.content || ''
@@ -35,7 +35,7 @@ module.exports = function scrollbox (opts) {
   var offset = 0
 
   function setContent (_content) {
-    assert.equal(typeof _content, 'string', 'content must be string')
+    assert.strictEqual(typeof _content, 'string', 'content must be string')
 
     content = _content
     linesDirty = true
@@ -43,9 +43,9 @@ module.exports = function scrollbox (opts) {
   }
 
   function resize (s) {
-    assert.equal(typeof s, 'object', 'size must be an object { width, height }')
-    assert.equal(typeof s.width, 'number', 'size.width must be number')
-    assert.equal(typeof s.height, 'number', 'size.height must be number')
+    assert.strictEqual(typeof s, 'object', 'size must be an object { width, height }')
+    assert.strictEqual(typeof s.width, 'number', 'size.width must be number')
+    assert.strictEqual(typeof s.height, 'number', 'size.height must be number')
 
     width = s.width
     height = s.height
@@ -54,7 +54,7 @@ module.exports = function scrollbox (opts) {
   }
 
   function scroll (_offset) {
-    assert.equal(typeof _offset, 'number', 'offset must be number')
+    assert.strictEqual(typeof _offset, 'number', 'offset must be number')
 
     offset = _offset
     sub.notify()

@@ -8,11 +8,11 @@
   },
   "devDependencies": {
     "@jamen/lorem": "^0.1.0",
-    "ansi-diff": "^1.1.0",
+    "ansi-diff": "^1.1.1",
     "keypress": "^0.2.1",
-    "standard": "^11.0.0",
-    "tap-spec": "^4.0.2",
-    "tape": "^4.0.0"
+    "standard": "^13.0.0",
+    "tap-spec": "^4.1.2",
+    "tape": "^4.11.0"
   },
   "homepage": "https://github.com/goto-bus-stop/ansi-scrollbox",
   "keywords": [
