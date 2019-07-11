@@ -1,7 +1,7 @@
 {
   "name": "ansi-scrollbox",
   "description": "a basic scrollable area for terminal apps",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": {
     "url": "https://github.com/goto-bus-stop/ansi-scrollbox/issues"
