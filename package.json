@@ -10,7 +10,7 @@
     "@jamen/lorem": "^0.2.0",
     "ansi-diff": "^1.1.1",
     "keypress": "^0.2.1",
-    "standard": "^14.3.1",
+    "standard": "^16.0.1",
     "tape": "^5.0.0"
   },
   "homepage": "https://github.com/goto-bus-stop/ansi-scrollbox",
