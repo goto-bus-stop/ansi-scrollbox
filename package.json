@@ -33,6 +33,6 @@
     "test": "standard && node test"
   },
   "dependencies": {
-    "wrap-ansi": "^3.0.1"
+    "wrap-ansi": "^8.1.0"
   }
 }
